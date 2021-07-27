@@ -1,0 +1,8 @@
+﻿foo () {
+  Print(Testing);
+}
+main () {
+  Print(Hello);
+  Print(5);
+  foo();
+}
