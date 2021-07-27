@@ -24,6 +24,7 @@ namespace DSComp
             root.Accept(new PopulationVisitor(globalSymbolTable));
             root.Accept(new IntegerVisitor(globalSymbolTable));
             root.Accept(new FCallValidator(globalSymbolTable));
+            Console.WriteLine("\r\n\r\n[SYMBOL TABLES]");
             Print(globalSymbolTable);
 
             // Codegen
@@ -39,8 +40,9 @@ namespace DSComp
                 return;
             }
             string indent = new string('\t', indentationLevel);
-            string bars = new string('=', indentationLevel + 5);
+            string bars = new string('=', indentationLevel + 20);
             Console.WriteLine($"{indent}{bars}");
+            Console.WriteLine($"{indent}[TYPE] - [IDENTIFIER] - [META DATA]");
 
             foreach (var entry in symbolTable.Entries) {
                 Console.WriteLine($"{indent}{entry.Type} - {entry.Identifier} - {entry.MetaData}");
